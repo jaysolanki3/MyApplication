@@ -20,10 +20,11 @@ public class SpecificationAdapter extends RecyclerView.Adapter<RecyclerView.View
 
     private List<SpecificationGroup> groups;
     private List<SpecificationItem> items;
-    private int selectedPosition = 0;
+    private int selectedPosition = -1;
 
     public SpecificationAdapter(List<SpecificationGroup> groups) {
         this.groups = groups;
+        //this.items = items;
         this.items = new ArrayList<>();
     }
 

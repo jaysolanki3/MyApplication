@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.util.Log;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -9,6 +11,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,15 +30,18 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        radioButtonItems =new ArrayList<>();
+        allItems = loadJsonFromAssets();
 
-        loadJsonFromAssets();
-        //radioButtonItems = specitem.getList();
+
+        Log.e("fetched data", allItems.get(0).toString());
+
 
         specificationAdapter = new SpecificationAdapter(allItems);
         recyclerView.setAdapter(specificationAdapter);
     }
 
-    private void loadJsonFromAssets() {
+    private List<SpecificationGroup> loadJsonFromAssets() {
         String json = null;
         try {
             InputStream is = getAssets().open("item_data.json");
@@ -44,13 +51,12 @@ public class MainActivity extends AppCompatActivity {
             is.close();
             json = new String(buffer, "UTF-8");
 
-            Gson gson = new Gson();
-            Type listType = new TypeToken<List<SpecificationGroup>>() {}.getType();
-            allItems =  gson.fromJson(json, listType);
+
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-
-
+        Gson gson = new Gson();
+        Type listType = new TypeToken<List<SpecificationGroup>>() {}.getType();
+        return  gson.fromJson(json, listType);
     }
 }
