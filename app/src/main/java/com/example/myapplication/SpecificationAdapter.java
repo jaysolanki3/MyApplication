@@ -1,9 +1,12 @@
 package com.example.myapplication;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.RadioButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,7 +22,8 @@ public class SpecificationAdapter extends RecyclerView.Adapter<RecyclerView.View
     private List<SpecificationItem> items;
     private int selectedPosition = 0;
 
-    public SpecificationAdapter(List<SpecificationGroup> groups) {
+    public SpecificationAdapter(List<SpecificationItem> items,List<SpecificationGroup> groups) {
+        this.items = items;
         this.groups = groups;
         this.items = new ArrayList<>();
     }
@@ -31,6 +35,7 @@ public class SpecificationAdapter extends RecyclerView.Adapter<RecyclerView.View
         } else {
             return VIEW_TYPE_SPECIFICATION;
         }
+
     }
 
     @NonNull
@@ -49,19 +54,58 @@ public class SpecificationAdapter extends RecyclerView.Adapter<RecyclerView.View
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         if (holder.getItemViewType() == VIEW_TYPE_RADIO_BUTTON) {
             RadioButtonViewHolder radioButtonViewHolder = (RadioButtonViewHolder) holder;
-            SpecificationGroup group = groups.get(position);
-            radioButtonViewHolder.radioButton.setText(group.getName().get(0));
+            SpecificationItem group = items.get(position);
             radioButtonViewHolder.radioButton.setChecked(position == selectedPosition);
+            radioButtonViewHolder.textViewName.setText(group.getName().get(0));
+            radioButtonViewHolder.textViewPrice.setText("₹ " + group.getPrice() + ".00");
             radioButtonViewHolder.itemView.setOnClickListener(v -> {
                 selectedPosition = holder.getAdapterPosition();
                 updateItems(groups.get(selectedPosition).getList());
                 notifyDataSetChanged();
             });
+
+
         } else {
             SpecificationViewHolder specificationViewHolder = (SpecificationViewHolder) holder;
-            SpecificationItem item = items.get(position - groups.size());
-            specificationViewHolder.textViewName.setText(item.getName().get(0));
-            specificationViewHolder.textViewPrice.setText("₹ " + item.getPrice());
+            String[] rows = new String[4];
+            Integer[] price = new Integer[4];
+            Integer[] id = new Integer[4];
+            int i = 0;
+            SpecificationGroup item = groups.get(position);
+            specificationViewHolder.ntitle.setText(item.getName().get(0));
+            for (SpecificationItem specItem : item.getList())
+            {
+                id[i] = specItem.getUniqueId();
+                rows[i] = specItem.getName().get(0);
+                price[i] = specItem.getPrice();
+                i++;
+            }
+
+            if(item.getUniqueId() == 1617 || item.getUniqueId() == 1616){
+                specificationViewHolder.r4.setVisibility(View.GONE);
+                specificationViewHolder.item1.setText(rows[0]);
+                specificationViewHolder.item2.setText(rows[1]);
+                specificationViewHolder.item3.setText(rows[2]);
+                specificationViewHolder.price1.setText("₹"+price[0]+".00");
+                specificationViewHolder.price2.setText("₹"+price[1]+".00");
+                specificationViewHolder.price3.setText("₹"+price[2]+".00");
+            } else if (item.getUniqueId() == 1614) {
+                specificationViewHolder.r3.setVisibility(View.GONE);
+                specificationViewHolder.r4.setVisibility(View.GONE);
+                specificationViewHolder.item1.setText(rows[0]);
+                specificationViewHolder.item2.setText(rows[1]);
+                specificationViewHolder.price1.setText("₹"+price[0]+".00");
+                specificationViewHolder.price2.setText("₹"+price[1]+".00");
+            } else if (item.getUniqueId() == 1615) {
+                specificationViewHolder.item1.setText(rows[0]);
+                specificationViewHolder.item2.setText(rows[1]);
+                specificationViewHolder.item3.setText(rows[2]);
+                specificationViewHolder.item4.setText(rows[3]);
+                specificationViewHolder.price1.setText("₹"+price[0]+".00");
+                specificationViewHolder.price2.setText("₹"+price[1]+".00");
+                specificationViewHolder.price3.setText("₹"+price[2]+".00");
+                specificationViewHolder .price4.setText("₹"+price[3]+".00");
+            }
         }
     }
 
@@ -79,22 +123,39 @@ public class SpecificationAdapter extends RecyclerView.Adapter<RecyclerView.View
     public static class RadioButtonViewHolder extends RecyclerView.ViewHolder {
         RadioButton radioButton;
         TextView textViewName;
+        TextView textViewPrice;
 
         public RadioButtonViewHolder(@NonNull View itemView) {
             super(itemView);
             radioButton = itemView.findViewById(R.id.radioButton);
             textViewName = itemView.findViewById(R.id.textViewName);
+            textViewPrice = itemView.findViewById(R.id.textViewPrice);
         }
     }
 
     public static class SpecificationViewHolder extends RecyclerView.ViewHolder {
-        TextView textViewName;
-        TextView textViewPrice;
+        CheckBox[] cb = new CheckBox[4];
+        public TextView ntitle, price1, price2, price3, price4;
+        public CheckBox item1,item2,item3,item4;
+        public RelativeLayout r3,r4;
 
         public SpecificationViewHolder(@NonNull View itemView) {
             super(itemView);
-            textViewName = itemView.findViewById(R.id.textViewName);
-            textViewPrice = itemView.findViewById(R.id.textViewPrice);
+            ntitle = itemView.findViewById(R.id.title);
+            price1 = itemView.findViewById(R.id.price1);
+            price2 = itemView.findViewById(R.id.price2);
+            price3 = itemView.findViewById(R.id.price3);
+            price4 = itemView.findViewById(R.id.price4);
+            item1 = itemView.findViewById(R.id.item1);
+            item2 = itemView.findViewById(R.id.item2);
+            item3 = itemView.findViewById(R.id.item3);
+            item4 = itemView.findViewById(R.id.item4);
+            r3 = itemView.findViewById(R.id.row3);
+            r4 = itemView.findViewById(R.id.row4);
+            cb[0] = item1;
+            cb[1] = item2;
+            cb[2] = item3;
+            cb[3] = item4;
         }
     }
 }

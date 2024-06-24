@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         loadJsonFromAssets();
         radioButtonItems = specitem.getList();
 
-        specificationAdapter = new SpecificationAdapter(allItems);
+        specificationAdapter = new SpecificationAdapter(radioButtonItems,allItems);
         recyclerView.setAdapter(specificationAdapter);
     }
 
