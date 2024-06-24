@@ -28,9 +28,9 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         loadJsonFromAssets();
-        radioButtonItems = specitem.getList();
+        //radioButtonItems = specitem.getList();
 
-        specificationAdapter = new SpecificationAdapter(radioButtonItems,allItems);
+        specificationAdapter = new SpecificationAdapter(allItems);
         recyclerView.setAdapter(specificationAdapter);
     }
 
