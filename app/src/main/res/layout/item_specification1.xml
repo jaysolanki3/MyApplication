@@ -41,46 +41,328 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title" />
 
-        <LinearLayout
-            android:id="@+id/linear"
+
+        <RelativeLayout
+            android:id="@+id/linear1"
             android:visibility="visible"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5">
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            android:layoutDirection="ltr">
 
-            <RadioButton
-                android:id="@+id/radioButton"
+            <RelativeLayout
+                android:id="@+id/c1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical" />
+                android:orientation="vertical"
+                >
 
-            <TextView
-                android:id="@+id/textViewName"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:paddingStart="8dp"
-                android:text="1 BHK"
-                android:textSize="16sp" />
+                <RadioGroup
+                    android:id="@+id/selectradio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkedButton="@+id/radioButton1">
+                    <RadioButton
+                        android:id="@+id/radioButton1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="1 BHK"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        />
 
-            <TextView
-                android:id="@+id/textViewPrice"
+                    <RadioButton
+                        android:id="@+id/radioButton2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/radioButton1"
+                        android:layout_gravity="center_vertical"
+                        android:text="1 BHK"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"/>
+
+                    <RadioButton
+                        android:id="@+id/radioButton3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/radioButton2"
+                        android:layout_gravity="center_vertical"
+                        android:text="1 BHK"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"/>
+
+                    <RadioButton
+                        android:id="@+id/radioButton4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/radioButton3"
+                        android:layout_gravity="center_vertical"
+                        android:text="1 BHK"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"/>
+
+                    <RadioButton
+                        android:id="@+id/radioButton5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/radioButton4"
+                        android:layout_gravity="center_vertical"
+                        android:text="1 BHK"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"/>
+                </RadioGroup>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/c3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="₹ 999.00"
-                android:textSize="16sp" />
-        </LinearLayout>
+                android:layout_alignRight="@id/c1"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/textViewPrice1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="₹ 999.00"
+                    android:textSize="16sp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="26dp"
+                    />
+
+                <TextView
+                    android:id="@+id/textViewPrice2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textViewPrice1"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="₹ 999.00"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="26dp"/>
+
+                <TextView
+                    android:id="@+id/textViewPrice3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textViewPrice2"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="₹ 999.00"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="26dp"/>
+
+                <TextView
+                    android:id="@+id/textViewPrice4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textViewPrice3"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="₹ 999.00"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="26dp"/>
+
+                <TextView
+                    android:id="@+id/textViewPrice5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textViewPrice4"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="₹ 999.00"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/linear"-->
+<!--            android:visibility="gone"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            android:padding="8dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/textView5">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:padding="8dp"-->
+<!--                >-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/radioButton1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/textViewName1"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:paddingStart="8dp"-->
+<!--                    android:text="1 BHK"-->
+<!--                    android:textSize="16sp" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/textViewPrice1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:text="₹ 999.00"-->
+<!--                    android:textSize="16sp"-->
+<!--                     />-->
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:padding="8dp"-->
+<!--                >-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/radioButton2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/textViewName2"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:paddingStart="8dp"-->
+<!--                    android:text="1 BHK"-->
+<!--                    android:textSize="16sp" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/textViewPrice2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:text="₹ 999.00"-->
+<!--                    android:textSize="16sp" />-->
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:padding="8dp"-->
+<!--                >-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/radioButton3"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/textViewName3"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:paddingStart="8dp"-->
+<!--                    android:text="1 BHK"-->
+<!--                    android:textSize="16sp" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/textViewPrice3"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:text="₹ 999.00"-->
+<!--                    android:textSize="16sp" />-->
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:padding="8dp"-->
+<!--                >-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/radioButton4"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/textViewName4"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:paddingStart="8dp"-->
+<!--                    android:text="1 BHK"-->
+<!--                    android:textSize="16sp" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/textViewPrice4"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:text="₹ 999.00"-->
+<!--                    android:textSize="16sp" />-->
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:padding="8dp"-->
+<!--                >-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/radioButton5"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/textViewName5"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:paddingStart="8dp"-->
+<!--                    android:text="1 BHK"-->
+<!--                    android:textSize="16sp" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/textViewPrice5"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:text="₹ 999.00"-->
+<!--                    android:textSize="16sp" />-->
+<!--            </LinearLayout>-->
+<!--        </LinearLayout>-->
+
+
 
         <RelativeLayout
             android:visibility="gone"
-            android:id="@+id/relative"
+            android:id="@+id/relative1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="5dp"
@@ -165,7 +447,7 @@
                     android:layout_gravity="right|center_vertical"/>
 
                 <LinearLayout
-                    android:id="@+id/counterView"
+                    android:id="@+id/counterView1"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:orientation="horizontal"
@@ -177,7 +459,7 @@
                     android:visibility="gone"
                     >
                     <TextView
-                        android:id="@+id/button_decrement"
+                        android:id="@+id/button_decrement1"
                         android:layout_width="30dp"
                         android:paddingLeft="5dp"
                         android:layout_height="match_parent"
@@ -186,7 +468,7 @@
                         android:gravity="center"/>
 
                     <TextView
-                        android:id="@+id/text_count"
+                        android:id="@+id/text_count1"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/count_background"
@@ -201,7 +483,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/button_increment"
+                        android:id="@+id/button_increment1"
                         android:layout_width="30dp"
                         android:layout_height="match_parent"
                         android:background="?attr/selectableItemBackgroundBorderless"
@@ -253,7 +535,7 @@
                     android:layout_gravity="right|center_vertical"/>
 
                 <LinearLayout
-                    android:id="@+id/counterView"
+                    android:id="@+id/counterView2"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:orientation="horizontal"
@@ -265,7 +547,7 @@
                     android:visibility="gone"
                     >
                     <TextView
-                        android:id="@+id/button_decrement"
+                        android:id="@+id/button_decrement2"
                         android:layout_width="30dp"
                         android:paddingLeft="5dp"
                         android:layout_height="match_parent"
@@ -274,7 +556,7 @@
                         android:gravity="center"/>
 
                     <TextView
-                        android:id="@+id/text_count"
+                        android:id="@+id/text_count2"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/count_background"
@@ -289,7 +571,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/button_increment"
+                        android:id="@+id/button_increment2"
                         android:layout_width="30dp"
                         android:layout_height="match_parent"
                         android:background="?attr/selectableItemBackgroundBorderless"
@@ -338,7 +620,7 @@
                     />
 
                 <LinearLayout
-                    android:id="@+id/counterView4"
+                    android:id="@+id/counterView3"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:orientation="horizontal"
@@ -350,7 +632,7 @@
                     android:visibility="gone"
                     >
                     <TextView
-                        android:id="@+id/button_decrement"
+                        android:id="@+id/button_decrement3"
                         android:layout_width="30dp"
                         android:paddingLeft="5dp"
                         android:layout_height="match_parent"
@@ -359,7 +641,7 @@
                         android:gravity="center"/>
 
                     <TextView
-                        android:id="@+id/text_count"
+                        android:id="@+id/text_count3"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/count_background"
@@ -374,7 +656,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/button_increment"
+                        android:id="@+id/button_increment3"
                         android:layout_width="30dp"
                         android:layout_height="match_parent"
                         android:background="?attr/selectableItemBackgroundBorderless"

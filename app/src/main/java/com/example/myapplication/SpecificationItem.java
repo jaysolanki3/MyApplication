@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import java.util.Collections;
 import java.util.List;
 
 public class SpecificationItem {
@@ -10,6 +11,12 @@ public class SpecificationItem {
     private boolean isDefaultSelected;
     private String specificationGroupId;
     private int uniqueId;
+
+
+    public SpecificationItem(String name, int price) {
+        this.name = Collections.singletonList(name);
+        this.price = price;
+    }
 
     // Getters and setters
     public String getId() {

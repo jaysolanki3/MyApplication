@@ -487,6 +487,94 @@
       "user_can_add_specification_quantity":true
    },
    {
+      "_id":"621da831abb8a52242c18254",
+      "name":[
+         "Bathroom Cleaning"
+      ],
+      "sequence_number":0,
+      "unique_id":1614,
+      "list":[
+         {
+            "_id":"621daa0babb8a52242c1836a",
+            "name":[
+               "I don’t want any bathroom cleaning"
+            ],
+            "price":0,
+            "sequence_number":0,
+            "is_default_selected":false,
+
+            "specification_group_id":"621da831abb8a52242c18254",
+            "unique_id":6760
+         },
+         {
+            "_id":"621daa19abb8a52242c18373",
+            "name":[
+               "No. of Bathrooms"
+            ],
+            "price":159,
+            "sequence_number":1,
+            "is_default_selected":false,
+
+            "specification_group_id":"621da831abb8a52242c18254",
+            "unique_id":6761
+         }
+      ],
+      "max_range":1,
+      "range":0,
+      "type":2,
+      "is_required":false,
+      "modifierId":"621da7b1abb8a52242c18207",
+      "modifierGroupId":"621da754abb8a52242c181d8",
+      "modifierGroupName":"Apartment Size",
+      "modifierName":"4 BHK",
+      "isAssociated":true,
+      "user_can_add_specification_quantity":true
+   },
+   {
+      "_id":"621da831abb8a52242c18254",
+      "name":[
+         "Bathroom Cleaning"
+      ],
+      "sequence_number":0,
+      "unique_id":1614,
+      "list":[
+         {
+            "_id":"621daa0babb8a52242c1836a",
+            "name":[
+               "I don’t want any bathroom cleaning"
+            ],
+            "price":0,
+            "sequence_number":0,
+            "is_default_selected":false,
+
+            "specification_group_id":"621da831abb8a52242c18254",
+            "unique_id":6760
+         },
+         {
+            "_id":"621daa19abb8a52242c18373",
+            "name":[
+               "No. of Bathrooms"
+            ],
+            "price":199,
+            "sequence_number":1,
+            "is_default_selected":false,
+
+            "specification_group_id":"621da831abb8a52242c18254",
+            "unique_id":6761
+         }
+      ],
+      "max_range":1,
+      "range":0,
+      "type":2,
+      "is_required":false,
+      "modifierId":"621da7b1abb8a52242c18207",
+      "modifierGroupId":"621da754abb8a52242c181d8",
+      "modifierGroupName":"Apartment Size",
+      "modifierName":">4 BHK",
+      "isAssociated":true,
+      "user_can_add_specification_quantity":true
+   },
+   {
       "_id":"621da88cabb8a52242c18308",
       "name":[
          "Living Room/Dining Room Cleaning"
@@ -494,6 +582,18 @@
       "sequence_number":0,
       "unique_id":1616,
       "list":[
+         {
+            "_id":"621daaaaabb8a52242c183b8",
+            "name":[
+               "I don’t want any living room/dining room cleaning"
+            ],
+            "price":0,
+            "sequence_number":0,
+            "is_default_selected":false,
+
+            "specification_group_id":"621da88cabb8a52242c18308",
+            "unique_id":6765
+         },
          {
             "_id":"621daabfabb8a52242c183c8",
             "name":[
@@ -517,18 +617,6 @@
 
             "specification_group_id":"621da88cabb8a52242c18308",
             "unique_id":6766
-         },
-         {
-            "_id":"621daaaaabb8a52242c183b8",
-            "name":[
-               "I don’t want any living room/dining room cleaning"
-            ],
-            "price":0,
-            "sequence_number":0,
-            "is_default_selected":false,
-
-            "specification_group_id":"621da88cabb8a52242c18308",
-            "unique_id":6765
          }
       ],
       "max_range":1,
@@ -550,6 +638,18 @@
       "sequence_number":0,
       "unique_id":1616,
       "list":[
+         {
+            "_id":"621daaaaabb8a52242c183b8",
+            "name":[
+               "I don’t want any living room/dining room cleaning"
+            ],
+            "price":0,
+            "sequence_number":0,
+            "is_default_selected":false,
+
+            "specification_group_id":"621da88cabb8a52242c18308",
+            "unique_id":6765
+         },
          {
             "_id":"621daabfabb8a52242c183c8",
             "name":[
@@ -573,19 +673,8 @@
 
             "specification_group_id":"621da88cabb8a52242c18308",
             "unique_id":6766
-         },
-         {
-            "_id":"621daaaaabb8a52242c183b8",
-            "name":[
-               "I don’t want any living room/dining room cleaning"
-            ],
-            "price":0,
-            "sequence_number":0,
-            "is_default_selected":false,
-
-            "specification_group_id":"621da88cabb8a52242c18308",
-            "unique_id":6765
          }
+
       ],
       "max_range":1,
       "range":0,
@@ -606,6 +695,18 @@
       "sequence_number":0,
       "unique_id":1616,
       "list":[
+         {
+            "_id":"621daaaaabb8a52242c183b8",
+            "name":[
+               "I don’t want any living room/dining room cleaning"
+            ],
+            "price":0,
+            "sequence_number":0,
+            "is_default_selected":false,
+
+            "specification_group_id":"621da88cabb8a52242c18308",
+            "unique_id":6765
+         },
          {
             "_id":"621daabfabb8a52242c183c8",
             "name":[
@@ -629,18 +730,6 @@
 
             "specification_group_id":"621da88cabb8a52242c18308",
             "unique_id":6766
-         },
-         {
-            "_id":"621daaaaabb8a52242c183b8",
-            "name":[
-               "I don’t want any living room/dining room cleaning"
-            ],
-            "price":0,
-            "sequence_number":0,
-            "is_default_selected":false,
-
-            "specification_group_id":"621da88cabb8a52242c18308",
-            "unique_id":6765
          }
       ],
       "max_range":1,
@@ -662,6 +751,18 @@
       "sequence_number":0,
       "unique_id":1616,
       "list":[
+         {
+            "_id":"621daaaaabb8a52242c183b8",
+            "name":[
+               "I don’t want any living room/dining room cleaning"
+            ],
+            "price":0,
+            "sequence_number":0,
+            "is_default_selected":false,
+
+            "specification_group_id":"621da88cabb8a52242c18308",
+            "unique_id":6765
+         },
          {
             "_id":"621daabfabb8a52242c183c8",
             "name":[
@@ -685,18 +786,6 @@
 
             "specification_group_id":"621da88cabb8a52242c18308",
             "unique_id":6766
-         },
-         {
-            "_id":"621daaaaabb8a52242c183b8",
-            "name":[
-               "I don’t want any living room/dining room cleaning"
-            ],
-            "price":0,
-            "sequence_number":0,
-            "is_default_selected":false,
-
-            "specification_group_id":"621da88cabb8a52242c18308",
-            "unique_id":6765
          }
       ],
       "max_range":1,
@@ -718,6 +807,18 @@
       "sequence_number":0,
       "unique_id":1616,
       "list":[
+         {
+            "_id":"621daaaaabb8a52242c183b8",
+            "name":[
+               "I don’t want any living room/dining room cleaning"
+            ],
+            "price":0,
+            "sequence_number":0,
+            "is_default_selected":false,
+
+            "specification_group_id":"621da88cabb8a52242c18308",
+            "unique_id":6765
+         },
          {
             "_id":"621daabfabb8a52242c183c8",
             "name":[
@@ -741,18 +842,6 @@
 
             "specification_group_id":"621da88cabb8a52242c18308",
             "unique_id":6766
-         },
-         {
-            "_id":"621daaaaabb8a52242c183b8",
-            "name":[
-               "I don’t want any living room/dining room cleaning"
-            ],
-            "price":0,
-            "sequence_number":0,
-            "is_default_selected":false,
-
-            "specification_group_id":"621da88cabb8a52242c18308",
-            "unique_id":6765
          }
       ],
       "max_range":1,
@@ -1017,7 +1106,7 @@
          {
             "_id":"621da9e4abb8a52242c1835b",
             "name":[
-               "With Fridge &amp; Microwave Deep Cleaning"
+               "With Fridge & Microwave Deep Cleaning"
             ],
             "price":299,
             "sequence_number":3,
@@ -1085,7 +1174,7 @@
          {
             "_id":"621da9e4abb8a52242c1835b",
             "name":[
-               "With Fridge &amp; Microwave Deep Cleaning"
+               "With Fridge & Microwave Deep Cleaning"
             ],
             "price":329,
             "sequence_number":3,
@@ -1105,49 +1194,6 @@
       "modifierName":">4 BHK",
       "isAssociated":true,
       "user_can_add_specification_quantity":true
-   },
-   {
-      "_id":"621da831abb8a52242c18254",
-      "name":[
-         "Bathroom Cleaning"
-      ],
-      "sequence_number":0,
-      "unique_id":1614,
-      "list":[
-         {
-            "_id":"621daa0babb8a52242c1836a",
-            "name":[
-               "No. of Bathrooms"
-            ],
-            "price":199,
-            "sequence_number":0,
-            "is_default_selected":false,
-
-            "specification_group_id":"621da831abb8a52242c18254",
-            "unique_id":6760
-         },
-         {
-            "_id":"621daa19abb8a52242c18373",
-            "name":[
-               "I don’t want any bathroom cleaning"
-            ],
-            "price":0,
-            "sequence_number":1,
-            "is_default_selected":false,
-
-            "specification_group_id":"621da831abb8a52242c18254",
-            "unique_id":6761
-         }
-      ],
-      "max_range":1,
-      "range":0,
-      "type":2,
-      "is_required":false,
-      "modifierId":"621da7b1abb8a52242c18207",
-      "modifierGroupId":"621da754abb8a52242c181d8",
-      "modifierGroupName":"Apartment Size",
-      "modifierName":">4 BHK",
-      "isAssociated":true,
-      "user_can_add_specification_quantity":true
    }
+
 ]

@@ -6,7 +6,7 @@ public class SpecificationGroup {
     private String id;
     private List<String> name;
     private int sequenceNumber;
-    private int uniqueId;
+    private int unique_id;
     private List<SpecificationItem> list;
     private int maxRange;
     private int range;
@@ -14,6 +14,8 @@ public class SpecificationGroup {
     private boolean isRequired;
     private boolean isParentAssociate;
     private String modifierName;
+
+
 
     // Getters and setters
     public String getId() {
@@ -40,12 +42,12 @@ public class SpecificationGroup {
         this.sequenceNumber = sequenceNumber;
     }
 
-    public int getUniqueId() {
-        return uniqueId;
+    public int getUnique_id() {
+        return unique_id;
     }
 
     public void setUniqueId(int uniqueId) {
-        this.uniqueId = uniqueId;
+        this.unique_id = unique_id;
     }
 
     public List<SpecificationItem> getList() {

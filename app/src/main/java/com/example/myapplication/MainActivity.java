@@ -21,7 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private SpecificationAdapter specificationAdapter;
     private List<SpecificationGroup> allItems;
     private List<SpecificationItem> radioButtonItems;
-    private SpecificationGroup specitem;
+    public SpecificationGroup specitem;
+    Integer price;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +35,46 @@ public class MainActivity extends AppCompatActivity {
         allItems = loadJsonFromAssets();
 
 
-        Log.e("fetched data", allItems.get(0).toString());
+        for(SpecificationGroup group : allItems){
+            for (SpecificationItem item : group.getList()){
+                radioButtonItems.add(item);
+                Log.e("fetched data", item.getName().toString());
+            }
+        }
+        Log.e("Radiobuttonsize", String.valueOf(allItems.size()));
 
 
-        specificationAdapter = new SpecificationAdapter(allItems);
+
+        specificationAdapter = new SpecificationAdapter(getApplicationContext(),allItems,radioButtonItems, this::updateDetailList);
         recyclerView.setAdapter(specificationAdapter);
+    }
+
+    private void updateDetailList(SpecificationGroup group,String modifier, Integer price1) {
+        if (modifier == "1 BHK") {
+            price1 = 999;
+            price = price1;
+            String btn = "ADD TO CART ₹" + price1 + ".00";
+            //addtocart.setText(btn);
+            List<SpecificationGroup> newDetails = new ArrayList<>();
+            for (SpecificationGroup item2 : allItems) {
+                if (item2.getModifierName().equalsIgnoreCase("1 BHK")) {
+                    newDetails.add(item2);
+                }
+            }
+            specificationAdapter.updateItems(newDetails);
+        } else {
+            price = price1;
+            String btn = "ADD TO CART ₹" + price1 + ".00";
+            //addtocart.setText(btn);
+            Log.e("price", btn);
+            List<SpecificationGroup> newDetails = new ArrayList<>();
+            for (SpecificationGroup item2 : allItems) {
+                if (item2.getModifierName().equalsIgnoreCase(modifier)) {
+                    newDetails.add(item2);
+                }
+            }
+            //specificationAdapter.updateItems(newDetails);
+        }
     }
 
     private List<SpecificationGroup> loadJsonFromAssets() {
