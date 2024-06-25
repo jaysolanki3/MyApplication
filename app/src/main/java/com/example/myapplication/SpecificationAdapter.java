@@ -68,10 +68,9 @@ public class SpecificationAdapter extends RecyclerView.Adapter<RecyclerView.View
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
-        SpecificationGroup group1 = groups.get(position);
         if (holder.getItemViewType() == VIEW_TYPE_RADIO_BUTTON) {
             RadioButtonViewHolder radioButtonViewHolder = (RadioButtonViewHolder) holder;
-
+            SpecificationGroup group1 = groups.get(position);
             String[] rows = new String[5];
             Integer[] price = new Integer[5];
             int i = 0;
@@ -92,34 +91,32 @@ public class SpecificationAdapter extends RecyclerView.Adapter<RecyclerView.View
             radioButtonViewHolder.p3.setText("₹ " + price[2] + ".00");
             radioButtonViewHolder.p4.setText("₹ " + price[3] + ".00");
             radioButtonViewHolder.p5.setText("₹ " + price[4] + ".00");
-//            if(flag == 0){
-//                onItemClickListener.onItemClick(group1,"1 BHK",price[0]);
-//            }
-//            radioButtonViewHolder.rdgroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-//                @Override
-//                public void onCheckedChanged(RadioGroup group, int checkedId) {
-//
-//                    RadioButton checkedRadioButton = group.findViewById(checkedId);
-//                    Toast.makeText(context, "Clicked "+checkedRadioButton.getText(), Toast.LENGTH_SHORT).show();
-//                    if (checkedRadioButton.getText().equals("1 BHK")) {
-//                        notifyDataSetChanged();
-//                        onItemClickListener.onItemClick(group1,"1 BHK",price[0]);
-//                    } else if (checkedRadioButton.getText().equals("2 BHK")) {
-//                        notifyDataSetChanged();
-//                        onItemClickListener.onItemClick(group1,"2 BHK",price[1]);
-//                    } else if (checkedRadioButton.getText().equals("3 BHK")) {
-//                        notifyDataSetChanged();
-//                        onItemClickListener.onItemClick(group1,"3 BHK",price[2]);
-//                    }else if (checkedRadioButton.getText().equals("4 BHK")) {
-//                        notifyDataSetChanged();
-//                        onItemClickListener.onItemClick(group1,"4 BHK",price[3]);
-//                    }else if (checkedRadioButton.getText().equals(">4 BHK")) {
-//                        notifyDataSetChanged();
-//                        onItemClickListener.onItemClick(group1,">4 BHK",price[4]);
-//                    }
-//
-//                }
-//            });
+            radioButtonViewHolder.rdgroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(RadioGroup group, int checkedId) {
+                    flag = 1;
+                    RadioButton checkedRadioButton = group.findViewById(checkedId);
+                    //Toast.makeText(context, "Clicked "+checkedRadioButton.getText(), Toast.LENGTH_SHORT).show();
+                    if (checkedRadioButton.getText().equals("1 BHK")) {
+                        notifyDataSetChanged();
+                        onItemClickListener.onItemClick(group1,"1 BHK",price[0]);
+                    }
+                    else if (checkedRadioButton.getText().equals("2 BHK")) {
+                        notifyDataSetChanged();
+                        onItemClickListener.onItemClick(group1,"2 BHK",price[1]);
+                    } else if (checkedRadioButton.getText().equals("3 BHK")) {
+                        notifyDataSetChanged();
+                        onItemClickListener.onItemClick(group1,"3 BHK",price[2]);
+                    }else if (checkedRadioButton.getText().equals("4 BHK")) {
+                        notifyDataSetChanged();
+                        onItemClickListener.onItemClick(group1,"4 BHK",price[3]);
+                    }else if (checkedRadioButton.getText().equals(">4 BHK")) {
+                        notifyDataSetChanged();
+                        onItemClickListener.onItemClick(group1,">4 BHK",price[4]);
+                    }
+
+                }
+            });
 //            radioButtonViewHolder.radioButton.setChecked(position == selectedPosition);
 //            radioButtonViewHolder.textViewName.setText(item.getName().get(0));
 //            radioButtonViewHolder.textViewPrice.setText("₹ " + item.getPrice() + ".00");
@@ -147,9 +144,6 @@ public class SpecificationAdapter extends RecyclerView.Adapter<RecyclerView.View
 //            });
 
         } else {
-            if(flag == 0){
-                onItemClickListener.onItemClick(group1,"1 BHK",999);
-            }
             SpecificationViewHolder specificationViewHolder = (SpecificationViewHolder) holder;
             String[] rows = new String[4];
             Integer[] price = new Integer[4];

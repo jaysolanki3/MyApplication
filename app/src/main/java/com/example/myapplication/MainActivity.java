@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private SpecificationAdapter specificationAdapter;
     private List<SpecificationGroup> allItems;
+    private List<SpecificationGroup> newDetails1 = new ArrayList<>();
     private List<SpecificationItem> radioButtonItems;
     public SpecificationGroup specitem;
     Integer price;
@@ -44,8 +45,12 @@ public class MainActivity extends AppCompatActivity {
         Log.e("Radiobuttonsize", String.valueOf(allItems.size()));
 
 
-
-        specificationAdapter = new SpecificationAdapter(getApplicationContext(),allItems,radioButtonItems, this::updateDetailList);
+        for (SpecificationGroup item2 : allItems) {
+            if (item2.getModifierName().equalsIgnoreCase("1 BHK") || item2.getModifierName().equalsIgnoreCase("Flat")) {
+                newDetails1.add(item2);
+            }
+        }
+        specificationAdapter = new SpecificationAdapter(getApplicationContext(),newDetails1,radioButtonItems, this::updateDetailList);
         recyclerView.setAdapter(specificationAdapter);
     }
 
@@ -57,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             //addtocart.setText(btn);
             List<SpecificationGroup> newDetails = new ArrayList<>();
             for (SpecificationGroup item2 : allItems) {
-                if (item2.getModifierName().equalsIgnoreCase("1 BHK")) {
+                if (item2.getModifierName().equalsIgnoreCase("1 BHK") || item2.getModifierName().equalsIgnoreCase("Flat")) {
                     newDetails.add(item2);
                 }
             }
@@ -69,11 +74,11 @@ public class MainActivity extends AppCompatActivity {
             Log.e("price", btn);
             List<SpecificationGroup> newDetails = new ArrayList<>();
             for (SpecificationGroup item2 : allItems) {
-                if (item2.getModifierName().equalsIgnoreCase(modifier)) {
+                if (item2.getModifierName().equalsIgnoreCase(modifier) || item2.getModifierName().equalsIgnoreCase("Flat")) {
                     newDetails.add(item2);
                 }
             }
-            //specificationAdapter.updateItems(newDetails);
+            specificationAdapter.updateItems(newDetails);
         }
     }
 
